@@ -1,0 +1,103 @@
+/*Note to self
+-  Why are all text not aligned to center except "nav" and "footer"?
+		-  Seems as the text is centered on the first char for the others
+
+
+
+
+
+*/
+
+
+*
+{
+	box-sizing: border-box;
+	text-align: center;
+	font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+	font-size: 18px;
+}
+
+body
+{
+	background: #777;
+}
+
+header, nav, footer
+{
+	/*To get the width to be 960,  need to set padding of 480 left and right.
+	Was surprising that I had to set content width to 0px to force the padding only.
+	Without width set to 0,  the width became dynamic.*/
+	/*For text to vertically align, the inner height(conent and padding) must be higher than the size of font
+	In this case font is 18px. Padding of 20 top and bottom clear the font.*/
+
+	/*?? Why is the nav text not centered??*/
+	width: 0px;
+	/*height: 0px;*/
+	padding: 20px 480px;
+	color: #777;
+	background: #ebebeb;
+	margin-bottom: 3px;
+}
+
+section
+{
+	/*To get the width to be 495,  set left/right padding of 247.5.  I am surprised you can specify decimal px.
+	Content width set to 0 to force width no to be dynamic.*/
+	width:0px;
+	padding:0px 247.5px;
+	color: #777;
+	background:#ebebeb;
+	float: left;
+	margin-bottom: 3px;
+}
+
+aside
+{
+	width: 0px;
+	/*final body width for this row must be 960px
+	960 = 495(section width) + 465px (remainder total)
+	465 = 3px (margin-left) + 462 (divided by 2 for left/right padding)*/
+
+	padding: 0px 231px;
+	color: #777;
+	background:#ebebeb;
+	margin-left:3px;
+	float: left;
+}
+
+nav,footer,section
+{
+	/*odd that margin-top seems to do nothing.  Need to use margin-bottom on element above to have an effect.*/
+	/*margin-top: 3px;*/
+	margin-bottom: 10px;
+	clear: both;
+}
+
+article
+{
+	/*??Why is margin-left -1px required for this to be visable?*/
+	/*495/4 = 123.75 for negative margin is still off*/
+	/*Margin and padding below are me being frustrated and just guessing what looks good.  I do not feel comfortable...*/
+	margin-left:-225px;
+	padding: 0px 225px;
+
+	color:#ebebeb;
+	background: red; 
+}
+
+div
+{
+	/*Just manual guessing*/
+	/*height: 20px;*/
+	margin-left: -150px;
+	padding: 0px 150px;
+	background: blue;
+}
+
+p
+{
+	/*Just manual guessing*/
+	margin-left:-150px;
+	padding:0px 150px;
+	background:green;
+}
